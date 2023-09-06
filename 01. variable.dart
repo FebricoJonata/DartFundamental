@@ -1,9 +1,8 @@
-
 //This is entry point -> function that executed first time when compile
 //Like Java, C, C++ we must make entry point function in dart
 //In Dart entry function is main(). You can exclude to you main function or you can include when make entry point
 
-void main(){
+void main() {
   /* 
     Var
     For Variable name, in dart we used camelCase :
@@ -25,7 +24,6 @@ void main(){
   final variableFinal = 'This final value';
   print(variableFinal);
 
-
   /*
     Const --> used to make variable and value immutable (tidak bisa diubah sama sekali)
   */
@@ -46,6 +44,31 @@ void main(){
   print('Const vs Final');
   print(array1);
 
-  
   print(array2);
+
+  /*
+      var --> var type data dynamic yang hanya bisa diubah 1x diawal. Setelah
+      dideklarasi maka type var ini akan selalu mengikuti tipe data yang telah 
+      diinisialisasi sejak awal
+
+      dynamic --> type dynamic ini memungkinkan untuk mendeteksi segala bentuk 
+      tipe data termasuk object. Akan tetapi dynamic ini lumayan tricky karena
+      tipe datanya bisa diubah-ubah kapan saja. Lebih baik berhati hati saat 
+      menggunakan tipe data dynamic ini.
+  */
+
+  var myVar = 10;
+  //error karena telah terdeteksi tipe datanya sebagai int
+  // myVar = '10';
+  print(myVar);
+
+  dynamic myDynamic = '10';
+  myDynamic = 10;
+  myDynamic = Person();
+  print((myDynamic as Person).name);
+
+}
+
+class Person {
+  String name = "Nama";
 }
